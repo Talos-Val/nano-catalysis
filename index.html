@@ -605,8 +605,10 @@ function setLang(lang){
 }
 try{
   const saved = localStorage.getItem('lang');
-  if(saved) setLang(saved);
-}catch(e){}
+  setLang(saved === 'en' ? 'en' : 'de');
+}catch(e){
+  setLang('de');
+}
 
 // build a genuine 3x3x3 stack of 27 small cubes (true 3D, not a flat grid)
 const mcContainer = document.getElementById('miniCubes');
